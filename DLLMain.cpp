@@ -356,7 +356,7 @@ DWORD WINAPI InitThread(LPVOID PARAMS)
 	printf(":: Attach to CSGO successfully\n");
 
 	printf("\nWaiting modules");
-	while( !mem->GetModule( "client_panorama.dll" ) || !mem->GetModule( "engine.dll" ) )
+	while( !mem->GetModule( "client.dll" ) || !mem->GetModule( "engine.dll" ) )
 	{
 		cout << ".";
 		mem->DumpModList();
@@ -364,10 +364,10 @@ DWORD WINAPI InitThread(LPVOID PARAMS)
 		cout << "\b.";
 	}
 	Sleep(5000);
-	client = mem->GetModule( "client_panorama.dll" );
+	client = mem->GetModule( "client.dll" );
 	engine = mem->GetModule( "engine.dll" );
 	
-	printf("\n:: client_panorama.dll - %X", client->GetImage());
+	printf("\n:: client.dll - %X", client->GetImage());
 	printf("\n:: engine.dll - %X\n", engine->GetImage());
 	
 	m_pGameDirectory = csgo->GetGameDirectory();
