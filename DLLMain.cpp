@@ -18,7 +18,7 @@ void printInfo() {
 	std::system("cls");
 	
 	g_pCon->SetConsoleColor( red, black );
-	cout<<"\n   KateBot v1.0.7 for Panorama BETA\n\n";
+	cout<<"\n   KateBot v1.0.7b BETA\n\n";
 	g_pCon->SetConsoleColor( aqua, black );
 	cout<<" WARNING: \n";
 	cout<<"    For features to work type command in console!\n";
@@ -353,9 +353,9 @@ DWORD WINAPI InitThread(LPVOID PARAMS)
 		Sleep(100);
 	}
 		
-	printf(":: Attach to CSGO successfully\n");
+	printf(":: Attached to CSGO successfully\n");
 
-	printf("\nWaiting modules");
+	printf("\nWaiting for modules");
 	while( !mem->GetModule( "client.dll" ) || !mem->GetModule( "engine.dll" ) )
 	{
 		cout << ".";
